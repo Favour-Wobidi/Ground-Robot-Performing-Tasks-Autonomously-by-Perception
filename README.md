@@ -550,7 +550,7 @@ Launch Cartographer SLAM:
 ```bash
 ros2 launch turtlebot3_cartographer cartographer.launch.py
 ```
-![Robot Localization and Mapping Visualization](turtlebot3_ws/src/maps/rviz_map.png)
+![Robot Localization and Mapping Visualization](turtlebot3_ws/src/maps/rviz.png)
 
 
 #### turtlebot3_navigation2
