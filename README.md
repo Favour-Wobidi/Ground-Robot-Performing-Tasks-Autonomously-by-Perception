@@ -631,14 +631,6 @@ Start Cartographer SLAM using the cartographer launch file. Drive the robot arou
 
 After generating a map with SLAM, use the navigation2 launch file to start the navigation stack. Set navigation goals in RViz or through the navigation action interface. The robot will plan paths and navigate to goals while avoiding obstacles.
 
-## Project Documentation References
-
-This project was developed following the official TurtleBot3 documentation:
-
-- Camera calibration procedures: ROBOTIS e-Manual TurtleBot3 appendix for Raspberry Pi camera calibration
-- Autonomous driving implementation: ROBOTIS e-Manual TurtleBot3 autonomous driving section
-- SLAM configuration: ROBOTIS e-Manual TurtleBot3 SLAM node documentation
-- Navigation setup: ROBOTIS e-Manual TurtleBot3 navigation documentation
 
 ## Dependencies
 
@@ -843,5 +835,16 @@ turtlebot3_ws/
 ```
 
 **Note:** The `build/`, `install/`, and `log/` directories are automatically generated when running `colcon build` and contain compiled binaries, installed packages, and build logs respectively.
+
+## Project Documentation References
+
+This project was developed following the official TurtleBot3 documentation:
+
+- Camera calibration procedures: ROBOTIS e-Manual TurtleBot3 appendix for Raspberry Pi camera calibration
+- Autonomous driving implementation: ROBOTIS e-Manual TurtleBot3 autonomous driving section
+- SLAM configuration: ROBOTIS e-Manual TurtleBot3 SLAM node documentation
+- Navigation setup: ROBOTIS e-Manual TurtleBot3 navigation documentation
+- ChatGPT for Formating mathematics in Readme file
+
 
 
