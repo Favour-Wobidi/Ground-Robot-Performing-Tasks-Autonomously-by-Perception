@@ -227,7 +227,7 @@ camera:
 
 The calibration interface provides real-time feedback and parameter adjustment capabilities. When calibration mode is enabled, the image_projection node publishes an additional image topic (camera/image_extrinsic_calib) which displays the original camera feed overlaid with red lines marking the trapezoid boundaries. This visual feedback allows operators to see exactly how the region of interest is positioned on the road surface.
 
-![Extrinsic Camera Calibration Interface](src/maps/projection.png)
+![Extrinsic Camera Calibration Interface](turtlebot3_ws/src/maps/projection.png)
 
 This screenshot demonstrates the complete extrinsic camera calibration interface. The central panel shows the live camera feed from the TurtleBot3's perspective, displaying the black track with yellow lane markings. The red trapezoidal overlay clearly marks the region of interest that will be transformed into the bird's eye view. The top-left panel displays the processed output, showing the transformed bird's eye view where the black track surface appears as a flat plane with a prominent yellow lane line visible. The right panel shows the node hierarchy with image_projection highlighted, and below it are the calibration parameter controls. The interface displays all six calibration parameters: top_x (144), top_y (41), bottom_x (326), bottom_y (129), offset_x (10), and offset_y (160), each with sliders or input fields for real-time adjustment. The is_extrinsic_camera_calibration_mode checkbox is checked, indicating calibration mode is active, which enables the red overlay visualization and parameter adjustments.
 
@@ -366,7 +366,7 @@ x_center = (x_left + x_right) / 2
 
 This center position is published as a Float64 message on the /detect/lane topic, which is used by the control system to keep the robot centered in the lane.
 
-![Lane Detection Calibration Interface](src/maps/lane_detect.png)
+![Lane Detection Calibration Interface](turtlebot3_ws/src/maps/lane_detect.png)
 
 This image demonstrates the lane detection calibration interface. The central view shows the camera feed with yellow lane markings on a green surface, overlaid with a red trapezoidal region of interest. The right panel displays the HSV color calibration parameters for both white lanes (detect.lane.wh) and yellow lanes (detect.lane.yel), with sliders to adjust hue, saturation, and lightness ranges in real-time. These parameters allow fine-tuning the color detection thresholds to accurately identify lane markings under varying lighting conditions. The top-left panel shows the processed bird's eye view output, displaying the detected lane lines as white vertical lines on a black background, confirming that the lane detection algorithm is working correctly after calibration.
 
@@ -519,11 +519,11 @@ The code then writes this information to a CSV file called tf_log.csv in your ho
 
 This logged data is very useful because you can load it into spreadsheet programs or visualization tools to see the exact path the robot took, analyze its movements, check if it followed the intended route, and evaluate the robot's performance during experiments or missions. The code also handles errors gracefully - if it cannot find the robot's position right away, it will keep trying until the data becomes available.
 
-![Trajectory Visualization on Map](src/maps/Traject.jpeg)
+![Trajectory Visualization on Map](turtlebot3_ws/src/maps/Traject.jpeg)
 
 This image demonstrates the visualization of logged trajectory data. The occupancy grid map shows the explored environment with white areas representing free space, black areas representing obstacles, and gray areas representing unknown regions. The red line overlaid on the map shows the complete trajectory path recorded by the tf_logger node during robot operation. This visualization allows researchers to analyze the robot's movement patterns, verify that it stayed within navigable areas, and identify any irregularities in the path execution.
 
-![Trajectory Path Visualization](src/maps/Trajectory.png)
+![Trajectory Path Visualization](turtlebot3_ws/src/maps/Trajectory.png)
 
 This simplified trajectory visualization shows the recorded path in a cleaner format. The white U-shaped line represents the robot's movement path extracted from the logged position data. This type of visualization is useful for quick analysis of path patterns and can help identify loops, turns, and overall navigation behavior.
 
@@ -550,7 +550,7 @@ Launch Cartographer SLAM:
 ```bash
 ros2 launch turtlebot3_cartographer cartographer.launch.py
 ```
-![Robot Localization and Mapping Visualization](src/maps/rviz_map.png)
+![Robot Localization and Mapping Visualization](turtlebot3_ws/src/maps/rviz_map.png)
 
 
 #### turtlebot3_navigation2
@@ -568,7 +568,7 @@ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=False map
 
 **Note:** Ensure you have a map file generated from SLAM before running navigation.
 
-![Navigation Visualization in RViz](src/maps/Navigation.png)
+![Navigation Visualization in RViz](turtlebot3_ws/src/maps/Navigation.png)
 
 This RViz visualization demonstrates the complete navigation system in action. The image shows a top-down view of the TurtleBot3 robot navigating on a mapped track. The light blue area represents free navigable space from the occupancy grid map, while the pink surrounding layer indicates the costmap inflation zone, which encourages the robot to stay centered on the track and avoid obstacles. The gray circular robot is positioned on the track with its forward direction indicated. The dense cluster of green arrows around the robot represents AMCL (Adaptive Monte Carlo Localization) particles, showing the robot's localization uncertainty - each arrow represents a possible pose hypothesis. The concentration of particles indicates good localization confidence. Red dots visible in the scene represent raw LiDAR scan points detecting environmental features and obstacles. The multi-colored trajectory line following the robot's path shows the robot's movement history over time, with colors transitioning from red (most recent) through orange, yellow, green, blue, to purple (oldest), providing a temporal visualization of the navigation path. This visualization effectively demonstrates the integration of SLAM mapping, localization, and navigation components working together for autonomous robot operation.
 
